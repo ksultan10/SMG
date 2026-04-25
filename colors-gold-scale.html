@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Card</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px 32px; background: var(--bg); }
+  .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .chip { height: 96px; display: flex; align-items: flex-end; padding: 14px; }
+  .gold-deep { background:#A6802F; }
+  .gold      { background:#CEA64D; }
+  .gold-soft { background:#DDC17C; }
+  .lbl { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; color: var(--smg-black); }
+  .lbl b { display: block; font-family: var(--font-body); font-weight: 700; letter-spacing: .15em; text-transform: uppercase; font-size: 11px; margin-bottom: 2px; }
+  h4 { font-family: var(--font-body); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin: 0 0 14px; font-weight: 600; }
+</style></head>
+<body>
+  <h4>Gold accent — pressed · base · soft</h4>
+  <div class="row">
+    <div class="chip gold-deep"><span class="lbl"><b>Pressed</b>#A6802F</span></div>
+    <div class="chip gold"><span class="lbl"><b>Gold</b>#CEA64D</span></div>
+    <div class="chip gold-soft"><span class="lbl"><b>Light Gold</b>#DDC17C</span></div>
+  </div>
+</body></html>

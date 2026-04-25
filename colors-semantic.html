@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Card</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px 32px; background: var(--bg); }
+  table { width: 100%; border-collapse: collapse; }
+  td { padding: 10px 0; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  td.tk { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px; color: var(--fg); width: 38%; }
+  td.swatch { width: 14%; }
+  td.swatch div { width: 36px; height: 18px; border: 1px solid var(--border); }
+  td.use { font-family: var(--font-body); font-size: 12px; color: var(--fg-muted); }
+  td.hex { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; color: var(--fg-subtle); width: 20%; text-align: right; }
+  tr:last-child td { border-bottom: 0; }
+  h4 { font-family: var(--font-body); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin: 0 0 8px; font-weight: 600; }
+</style></head>
+<body>
+  <h4>Semantic color tokens</h4>
+  <table>
+    <tr><td class="tk">--bg</td><td class="swatch"><div style="background:#000"></div></td><td class="use">Page background</td><td class="hex">#000000</td></tr>
+    <tr><td class="tk">--bg-elevated</td><td class="swatch"><div style="background:#0A0A0A"></div></td><td class="use">Cards, modals</td><td class="hex">#0A0A0A</td></tr>
+    <tr><td class="tk">--fg</td><td class="swatch"><div style="background:#FFF"></div></td><td class="use">Primary text on black</td><td class="hex">#FFFFFF</td></tr>
+    <tr><td class="tk">--fg-muted</td><td class="swatch"><div style="background:#E6E6E6"></div></td><td class="use">Secondary text, body</td><td class="hex">#E6E6E6</td></tr>
+    <tr><td class="tk">--fg-subtle</td><td class="swatch"><div style="background:#8A8A8A"></div></td><td class="use">Captions, meta</td><td class="hex">#8A8A8A</td></tr>
+    <tr><td class="tk">--accent</td><td class="swatch"><div style="background:#CEA64D"></div></td><td class="use">CTAs, eyebrows, accents</td><td class="hex">#CEA64D</td></tr>
+    <tr><td class="tk">--accent-soft</td><td class="swatch"><div style="background:#DDC17C"></div></td><td class="use">Roles, hover, secondary</td><td class="hex">#DDC17C</td></tr>
+    <tr><td class="tk">--border</td><td class="swatch"><div style="background:#1F1F1F"></div></td><td class="use">Default border on dark</td><td class="hex">#1F1F1F</td></tr>
+  </table>
+</body></html>

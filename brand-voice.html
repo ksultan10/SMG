@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Card</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px 32px; background: var(--bg); display: flex; flex-direction: column; gap: 14px; }
+  blockquote { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 22px; line-height: 1.25; letter-spacing: -.03em; color: #fff; max-width: 90%; }
+  .yes b, .no b { font-family: var(--font-body); font-weight: 700; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
+  .yes { padding-left: 16px; border-left: 2px solid var(--accent); }
+  .yes b { color: var(--accent); }
+  .no { padding-left: 16px; border-left: 2px solid #6a3a3a; opacity: .7; }
+  .no b { color: #c87a7a; }
+  .no blockquote { text-decoration: line-through; color: #aaa; font-weight: 500; }
+  small { font-family: var(--font-body); font-size: 12px; color: var(--fg-muted); display: block; margin-top: 6px; line-height: 1.5; }
+</style></head>
+<body>
+  <div class="yes">
+    <b>Voice — yes</b>
+    <blockquote>WE BUILD WHAT LASTS.</blockquote>
+    <small>Declarative. Confident. Fragments earn impact.</small>
+  </div>
+  <div class="no">
+    <b>Voice — no</b>
+    <blockquote>"We're passionate about turning your dreams into reality! ✨"</blockquote>
+    <small>Marketing fluff, exclamation, emoji — banned.</small>
+  </div>
+</body></html>

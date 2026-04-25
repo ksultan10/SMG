@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Card</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px 32px; background: var(--bg); }
+  .row { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+  .step { display: flex; flex-direction: column; gap: 8px; }
+  .chip { height: 64px; border-radius: 0; }
+  .lbl { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 10.5px; color: var(--fg-muted); display: flex; justify-content: space-between; }
+  .lbl b { font-family: var(--font-body); font-weight: 700; color: var(--fg); letter-spacing: .1em; text-transform: uppercase; font-size: 10px; }
+  h4 { font-family: var(--font-body); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin: 0 0 14px; font-weight: 600; }
+</style></head>
+<body>
+  <h4>Ink scale — black foundation</h4>
+  <div class="row">
+    <div class="step"><div class="chip" style="background:#000"></div><div class="lbl"><b>Black</b><span>#000000</span></div></div>
+    <div class="step"><div class="chip" style="background:#0A0A0A"></div><div class="lbl"><b>Ink 900</b><span>#0A0A0A</span></div></div>
+    <div class="step"><div class="chip" style="background:#141414"></div><div class="lbl"><b>Ink 800</b><span>#141414</span></div></div>
+    <div class="step"><div class="chip" style="background:#1F1F1F"></div><div class="lbl"><b>Ink 700</b><span>#1F1F1F</span></div></div>
+    <div class="step"><div class="chip" style="background:#2A2A2A"></div><div class="lbl"><b>Ink 600</b><span>#2A2A2A</span></div></div>
+    <div class="step"><div class="chip" style="background:#8A8A8A"></div><div class="lbl"><b>Subtle</b><span>#8A8A8A</span></div></div>
+    <div class="step"><div class="chip" style="background:#E6E6E6"></div><div class="lbl"><b>Silver</b><span>#E6E6E6</span></div></div>
+  </div>
+</body></html>

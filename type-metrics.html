@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Card</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 32px; background: var(--bg); display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; align-items: end; }
+  .stat { display: flex; flex-direction: column; gap: 8px; }
+  .num { font-family: var(--font-display); font-weight: 900; font-size: 84px; line-height: .9; letter-spacing: -.05em; color: var(--accent); }
+  .lbl { font-family: var(--font-body); font-weight: 600; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--fg-muted); }
+  .num.white { color: var(--fg); }
+</style></head>
+<body>
+  <div class="stat"><span class="num">13</span><span class="lbl">Years</span></div>
+  <div class="stat"><span class="num white">200+</span><span class="lbl">Homes</span></div>
+  <div class="stat"><span class="num">6.7</span><span class="lbl">Acres</span></div>
+  <div class="stat"><span class="num white">2</span><span class="lbl">Cities</span></div>
+</body></html>

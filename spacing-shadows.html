@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Card</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 32px; background: #0a0a0a; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .box { aspect-ratio: 16/9; background: #141414; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: var(--font-body); font-weight: 700; font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--fg-muted); }
+  .s2 { box-shadow: 0 12px 40px -12px rgba(0,0,0,.6); }
+  .sg { box-shadow: 0 8px 32px -8px rgba(206,166,77,.45); border-color: var(--accent); color: var(--accent); }
+  .meta { font-family: ui-monospace, Menlo, monospace; font-size: 10.5px; color: var(--fg-subtle); margin-top: 10px; }
+  .cell { display: flex; flex-direction: column; }
+</style></head>
+<body>
+  <div class="cell"><div class="box">Flat</div><div class="meta">none — default on dark</div></div>
+  <div class="cell"><div class="box s2">Elevated</div><div class="meta">--shadow-2 · ambient</div></div>
+  <div class="cell"><div class="box sg">CTA glow</div><div class="meta">--shadow-gold · hover only</div></div>
+</body></html>

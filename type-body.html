@@ -1,0 +1,20 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Card</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px 32px; background: var(--bg); }
+  .stack { display: flex; flex-direction: column; gap: 18px; }
+  .row { display: grid; grid-template-columns: 90px 1fr 110px; gap: 18px; align-items: baseline; }
+  .tag { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: .1em; padding-top: 4px;}
+  .meta { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 10.5px; color: var(--fg-subtle); text-align: right; padding-top: 4px;}
+  .lead { font-family: var(--font-body); font-size: 22px; line-height: 1.5; color: var(--fg-muted); margin: 0; }
+  .body { font-family: var(--font-body); font-size: 16px; line-height: 1.55; color: var(--fg-muted); margin: 0; }
+  .cap { font-family: var(--font-body); font-size: 13px; line-height: 1.4; color: var(--fg-subtle); margin: 0; letter-spacing: .02em; }
+</style></head>
+<body>
+  <div class="stack">
+    <div class="row"><span class="tag">LEAD</span><p class="lead">Custom homes, commercial, and post-disaster restoration across northern Alberta.</p><span class="meta">22 / 1.5</span></div>
+    <div class="row"><span class="tag">BODY</span><p class="body">Founded 2013 in Fort McMurray, SMG Builders has delivered over two hundred homes and led restoration after the 2016 wildfire and 2020 flood.</p><span class="meta">16 / 1.55</span></div>
+    <div class="row"><span class="tag">CAPTION</span><p class="cap">Photography by SMG Builders — Wood Buffalo, AB.</p><span class="meta">13 / 1.4</span></div>
+  </div>
+</body></html>

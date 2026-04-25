@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Card</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px 32px; background: var(--bg); }
+  h4 { font-family: var(--font-body); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin: 0 0 14px; font-weight: 600; }
+  .row { display: flex; gap: 22px; align-items: flex-start; }
+  .ico { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .ico svg { width: 24px; height: 24px; color: #fff; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .ico.gold svg { color: var(--accent); }
+  .lbl { font-family: ui-monospace, Menlo, monospace; font-size: 10px; color: var(--fg-subtle); }
+  .meta { font-family: var(--font-body); font-size: 11px; color: var(--fg-subtle); margin-top: 16px; line-height: 1.6; }
+  .meta b { color: var(--fg); }
+</style></head>
+<body>
+  <h4>Iconography — Lucide · 2px stroke · 24px</h4>
+  <div class="row">
+    <div class="ico"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg><span class="lbl">arrow-right</span></div>
+    <div class="ico gold"><svg viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg><span class="lbl">arrow-up-right</span></div>
+    <div class="ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="lbl">phone</span></div>
+    <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg><span class="lbl">mail</span></div>
+    <div class="ico"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span class="lbl">map-pin</span></div>
+    <div class="ico"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg><span class="lbl">chevron</span></div>
+    <div class="ico"><svg viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg><span class="lbl">menu</span></div>
+    <div class="ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="lbl">plus</span></div>
+  </div>
+  <div class="meta">Always <b>2px stroke</b>. Never filled. Color: white default, <b>gold</b> for active. Banned: hard hats, hammers, gears, traffic cones, emoji.</div>
+</body></html>

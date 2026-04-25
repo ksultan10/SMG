@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Card</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px 32px; background: var(--bg); }
+  .row { display: grid; grid-template-columns: 80px 1fr 110px; gap: 16px; align-items: baseline; padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .row:last-child { border-bottom: 0; }
+  .tag { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: .1em; }
+  .meta { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 10.5px; color: var(--fg-subtle); text-align: right; }
+  .smp { font-family: var(--font-display); font-weight: 900; letter-spacing: -.05em; color: var(--fg); text-transform: uppercase; line-height: 1; }
+  .h1 { font-size: 56px; }
+  .h2 { font-size: 40px; }
+  .h3 { font-size: 28px; letter-spacing: -.03em; font-weight: 700; }
+  .h4 { font-size: 20px; letter-spacing: -.03em; font-weight: 700; text-transform: none; font-family: var(--font-body); }
+</style></head>
+<body>
+  <div class="row"><span class="tag">H1</span><span class="smp h1">FORT MCMURRAY</span><span class="meta">112 / .9 / −.05</span></div>
+  <div class="row"><span class="tag">H2</span><span class="smp h2">WE BUILD WHAT LASTS</span><span class="meta">72 / 1.05 / −.05</span></div>
+  <div class="row"><span class="tag">H3</span><span class="smp h3">THE 6.7-ACRE OPPORTUNITY</span><span class="meta">48 / 1.05 / −.03</span></div>
+  <div class="row"><span class="tag">H4</span><span class="smp h4">Custom Homes &amp; Commercial</span><span class="meta">32 / 1.2 / −.03</span></div>
+</body></html>

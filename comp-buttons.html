@@ -1,0 +1,97 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Card</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 32px; background: var(--bg); display: flex; flex-wrap: wrap; gap: 18px; align-items: center; }
+  /* Italic window button — parallelogram clip with non-italic text */
+  .btn {
+    --skew: -12deg;
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    text-decoration: none;
+  }
+  .btn .pane {
+    position: absolute; inset: 0;
+    transform: skewX(var(--skew));
+    transition: background 400ms cubic-bezier(.4,0,.2,1),
+                border-color 400ms cubic-bezier(.4,0,.2,1),
+                box-shadow 400ms cubic-bezier(.4,0,.2,1);
+  }
+  .btn .pane.shine {
+    position: absolute; top: 0; bottom: 0; width: 22%;
+    left: -30%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.45), transparent);
+    transform: skewX(var(--skew));
+    transition: left 600ms cubic-bezier(.4,0,.2,1);
+    pointer-events: none;
+  }
+  .btn:hover .pane.shine { left: 110%; }
+  .btn .label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 32px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: inherit;
+    z-index: 1;
+  }
+  .btn .label .arrow {
+    display: inline-block;
+    transform: skewX(0); /* arrow stays upright */
+    transition: transform 400ms cubic-bezier(.4,0,.2,1);
+  }
+  .btn:hover .label .arrow { transform: translateX(4px); }
+
+  /* Primary — solid gold pane */
+  .btn.primary { color: #000; }
+  .btn.primary .pane.fill { background: var(--accent); }
+  .btn.primary:hover .pane.fill { background: var(--accent-soft); box-shadow: 0 8px 24px -8px rgba(206,166,77,.5); }
+
+  /* Ghost — outline pane that fills white on hover */
+  .btn.ghost { color: #fff; }
+  .btn.ghost .pane.fill { background: transparent; border: 1px solid #fff; }
+  .btn.ghost:hover { color: #000; }
+  .btn.ghost:hover .pane.fill { background: #fff; }
+
+  /* Outline — gold border, fills gold on hover */
+  .btn.outline { color: var(--accent); }
+  .btn.outline .pane.fill { background: transparent; border: 1px solid var(--accent); }
+  .btn.outline:hover { color: #000; }
+  .btn.outline:hover .pane.fill { background: var(--accent); }
+
+  .lbl { width:100%; font-family: var(--font-body); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin: 0 0 4px; font-weight: 600; }
+  .meta { width:100%; font-family: ui-monospace, Menlo, monospace; font-size: 10.5px; color: var(--fg-subtle); margin-top: 6px; }
+</style></head>
+<body>
+  <span class="lbl">Buttons — italic-window panes (skewX −12°)</span>
+
+  <a href="#" class="btn primary">
+    <span class="pane fill"></span>
+    <span class="pane shine"></span>
+    <span class="label">Build with us <span class="arrow">→</span></span>
+  </a>
+
+  <a href="#" class="btn ghost">
+    <span class="pane fill"></span>
+    <span class="pane shine"></span>
+    <span class="label">See portfolio <span class="arrow">→</span></span>
+  </a>
+
+  <a href="#" class="btn outline">
+    <span class="pane fill"></span>
+    <span class="pane shine"></span>
+    <span class="label">Get estimate <span class="arrow">→</span></span>
+  </a>
+
+  <span class="meta">The pane is skewed; the text stays upright. Hover sweeps a light shine through the window.</span>
+</body></html>

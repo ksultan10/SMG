@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Card</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 32px; background: var(--bg); display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: end; }
+  .field { display: flex; flex-direction: column; gap: 10px; }
+  label { font-family: var(--font-body); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  input, textarea { width: 100%; background: transparent; color: #fff; border: 0; border-bottom: 1px solid #2A2A2A; padding: 12px 0; font-family: var(--font-body); font-size: 16px; outline: none; transition: border-color 400ms cubic-bezier(.4,0,.2,1); }
+  input:focus, textarea:focus { border-bottom-color: var(--accent); }
+  input::placeholder { color: #6a6a6a; }
+  .focused { border-bottom-color: var(--accent); }
+</style></head>
+<body>
+  <div class="field">
+    <label>Full name</label>
+    <input placeholder="Type your name" />
+  </div>
+  <div class="field">
+    <label>Email</label>
+    <input class="focused" value="alex@northern.ca" />
+  </div>
+</body></html>
