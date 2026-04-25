@@ -1,0 +1,436 @@
+/* =========================================================================
+   SMG BUILDERS — DESIGN TOKENS
+   Colors, typography, spacing, motion. Black-dominant + gold accents.
+   ========================================================================= */
+
+/* ---------- Web fonts ---------- */
+/* Helvetica is the canonical display face but is not freely licensed for web.
+   Inter (Black 900) is used as the fallback display face here.
+   See README → Typography for the substitution note. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+:root {
+  /* =========================
+     CORE PALETTE
+     ========================= */
+  --smg-black:       #000000;   /* Primary background, dominant */
+  --smg-white:       #FFFFFF;   /* Primary text on black */
+  --smg-gold:        #CEA64D;   /* Primary accent */
+  --smg-gold-light:  #DDC17C;   /* Secondary accent — muted text, role labels */
+  --smg-silver:      #E6E6E6;   /* Secondary / muted text on dark */
+
+  /* Tonal extensions, used sparingly. Derived from the core palette only. */
+  --smg-ink-900:     #0A0A0A;   /* Card/section background, just off black */
+  --smg-ink-800:     #141414;   /* Subtle hover surface */
+  --smg-ink-700:     #1F1F1F;   /* Borders on dark */
+  --smg-ink-600:     #2A2A2A;   /* Stronger borders, dividers */
+  --smg-gold-deep:   #A6802F;   /* Pressed gold state */
+  --smg-bone:        #F5F5F5;   /* Inverted surfaces (rare) */
+
+  /* =========================
+     SEMANTIC COLOR TOKENS
+     ========================= */
+  --bg:              var(--smg-black);
+  --bg-elevated:     var(--smg-ink-900);
+  --bg-inverted:     var(--smg-white);
+
+  --fg:              var(--smg-white);     /* Primary text */
+  --fg-muted:        var(--smg-silver);    /* Secondary text */
+  --fg-subtle:       #8A8A8A;              /* Tertiary text — captions, meta */
+  --fg-inverted:     var(--smg-black);
+
+  --accent:          var(--smg-gold);
+  --accent-soft:     var(--smg-gold-light);
+  --accent-pressed:  var(--smg-gold-deep);
+
+  --border:          var(--smg-ink-700);
+  --border-strong:   var(--smg-ink-600);
+  --border-accent:   var(--smg-gold);
+
+  /* =========================
+     LIGHT-SECTION TOKENS
+     For silver #E6E6E6 background sections that break up the dark.
+     Apply via the .on-light scope below.
+     ========================= */
+  --bg-light:           #E6E6E6;
+  --bg-light-elevated:  #F2F2F2;
+  --fg-light:           #0A0A0A;
+  --fg-light-muted:     #4A4A4A;
+  --fg-light-subtle:    #6E6E6E;
+  --border-light:       #C9C9C9;
+  --border-light-strong:#A8A8A8;
+  /* light-tokens v2 */
+
+  /* =========================
+     TYPE STACKS
+     ========================= */
+  --font-display:    "Helvetica Neue", "Helvetica", "Inter", system-ui, -apple-system, sans-serif;
+  --font-body:       "Inter", "Helvetica Neue", system-ui, -apple-system, sans-serif;
+  --font-mono:       "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* =========================
+     TYPE SCALE
+     Display sizes are intentionally massive — Nike-meets-construction.
+     ========================= */
+  --fs-eyebrow:   12px;
+  --fs-caption:   13px;
+  --fs-body-sm:   14px;
+  --fs-body:      16px;
+  --fs-body-lg:   18px;
+  --fs-lead:      22px;
+
+  --fs-h6:        20px;
+  --fs-h5:        24px;
+  --fs-h4:        32px;
+  --fs-h3:        48px;
+  --fs-h2:        72px;
+  --fs-h1:        112px;
+  --fs-display:   180px;   /* Hero only */
+
+  /* Letter spacing — tight for display, wide for eyebrows */
+  --ls-display:   -0.05em;  /* THE signature look */
+  --ls-tight:     -0.03em;
+  --ls-normal:    0;
+  --ls-wide:      0.05em;
+  --ls-eyebrow:   0.2em;
+
+  /* Line heights */
+  --lh-display:   0.92;
+  --lh-tight:     1.05;
+  --lh-snug:      1.2;
+  --lh-body:      1.55;
+  --lh-loose:     1.7;
+
+  /* Weights */
+  --fw-regular:   400;
+  --fw-medium:    500;
+  --fw-semibold:  600;
+  --fw-bold:      700;
+  --fw-black:     900;
+
+  /* =========================
+     SPACING (4px base)
+     ========================= */
+  --space-0:   0px;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   24px;
+  --space-6:   32px;
+  --space-7:   48px;
+  --space-8:   64px;
+  --space-9:   96px;
+  --space-10: 128px;
+  --space-11: 160px;
+  --space-12: 200px;
+
+  /* Page gutters & section padding */
+  --gutter:        clamp(24px, 4vw, 64px);
+  --section-pad-y: clamp(96px, 12vw, 200px);
+  --max-content:   1440px;
+
+  /* =========================
+     RADII — sharp by default
+     ========================= */
+  --radius-0: 0px;     /* Default. Sharp edges. */
+  --radius-1: 2px;     /* Subtle (inputs) */
+  --radius-2: 4px;     /* Maximum allowed */
+  --radius-pill: 999px;
+
+  /* =========================
+     SHADOWS — used sparingly on dark
+     ========================= */
+  --shadow-1: 0 1px 0 0 rgba(255,255,255,0.04) inset;
+  --shadow-2: 0 12px 40px -12px rgba(0,0,0,0.6);
+  --shadow-3: 0 24px 80px -20px rgba(0,0,0,0.8);
+  --shadow-gold: 0 8px 32px -8px rgba(206,166,77,0.35);
+
+  /* =========================
+     MOTION — premium & deliberate
+     ========================= */
+  --ease-premium: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast:    200ms;
+  --dur-base:    400ms;
+  --dur-slow:    600ms;
+  --dur-glacial: 900ms;
+}
+
+/* =========================================================================
+   BASE / RESET
+   ========================================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-regular);
+}
+
+/* =========================================================================
+   SEMANTIC TYPE
+   Use class names so we can apply them in JSX without resetting tags.
+   ========================================================================= */
+
+/* Display — for the hero "We offer solutions for ___" treatment */
+.smg-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-size: clamp(72px, 13vw, var(--fs-display));
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+  color: var(--fg);
+  text-transform: uppercase;
+}
+
+.smg-h1, h1 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-size: clamp(56px, 9vw, var(--fs-h1));
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.smg-h2, h2 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-size: clamp(40px, 6vw, var(--fs-h2));
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.smg-h3, h3 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: clamp(32px, 4vw, var(--fs-h3));
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.smg-h4, h4 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-tight);
+  margin: 0;
+}
+
+.smg-h5, h5 {
+  font-family: var(--font-body);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h5);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-tight);
+  margin: 0;
+}
+
+.smg-h6, h6 {
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-h6);
+  line-height: var(--lh-snug);
+  margin: 0;
+}
+
+/* Eyebrow — small caps, gold, wide-tracked. Used above section titles. */
+.smg-eyebrow {
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-eyebrow);
+  line-height: 1;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.smg-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* Body */
+.smg-lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-body);
+  color: var(--fg-muted);
+  font-weight: var(--fw-regular);
+  text-wrap: pretty;
+}
+p, .smg-p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg-muted);
+  margin: 0;
+  text-wrap: pretty;
+}
+.smg-caption {
+  font-size: var(--fs-caption);
+  line-height: var(--lh-snug);
+  color: var(--fg-subtle);
+  letter-spacing: 0.02em;
+}
+
+/* Role / meta label — used for team roles, project tags */
+.smg-role {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent-soft);
+}
+
+/* Number / metric */
+.smg-metric {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-size: clamp(56px, 8vw, 96px);
+  line-height: 0.95;
+  letter-spacing: var(--ls-display);
+  color: var(--accent);
+}
+
+/* =========================================================================
+   PRIMITIVES
+   ========================================================================= */
+
+/* Gold accent line — used as a section divider / underline */
+.smg-rule {
+  display: block;
+  width: 64px;
+  height: 2px;
+  background: var(--accent);
+  border: 0;
+}
+
+/* Buttons */
+.smg-btn {
+  --btn-bg: var(--accent);
+  --btn-fg: var(--smg-black);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 28px;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0;
+  border-radius: var(--radius-0);
+  cursor: pointer;
+  transition: background var(--dur-base) var(--ease-premium),
+              transform var(--dur-fast) var(--ease-premium),
+              color var(--dur-base) var(--ease-premium);
+}
+.smg-btn:hover { background: var(--accent-soft); }
+.smg-btn:active { background: var(--accent-pressed); transform: translateY(1px); }
+
+.smg-btn--ghost {
+  --btn-bg: transparent;
+  --btn-fg: var(--smg-white);
+  border: 1px solid var(--smg-white);
+}
+.smg-btn--ghost:hover {
+  --btn-bg: var(--smg-white);
+  --btn-fg: var(--smg-black);
+}
+
+.smg-btn--gold-outline {
+  --btn-bg: transparent;
+  --btn-fg: var(--accent);
+  border: 1px solid var(--accent);
+}
+.smg-btn--gold-outline:hover {
+  --btn-bg: var(--accent);
+  --btn-fg: var(--smg-black);
+}
+
+/* Link with the gold-underline-on-hover pattern */
+.smg-link {
+  color: var(--fg);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  background-position: 0 100%;
+  transition: background-size var(--dur-base) var(--ease-premium),
+              color var(--dur-base) var(--ease-premium);
+}
+.smg-link:hover { background-size: 100% 2px; color: var(--accent); }
+
+/* Card — sharp, ink elevated */
+.smg-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2);
+  padding: var(--space-6);
+}
+
+/* Input */
+.smg-input, .smg-textarea {
+  display: block;
+  width: 100%;
+  background: transparent;
+  color: var(--fg);
+  border: 0;
+  border-bottom: 1px solid var(--border-strong);
+  padding: 14px 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  outline: none;
+  transition: border-color var(--dur-base) var(--ease-premium);
+}
+.smg-input:focus, .smg-textarea:focus { border-bottom-color: var(--accent); }
+.smg-input::placeholder, .smg-textarea::placeholder { color: var(--fg-subtle); }
+
+/* Photography treatment — grayscale by default, color on hover */
+.smg-photo {
+  filter: grayscale(1) contrast(1.05);
+  transition: filter var(--dur-slow) var(--ease-premium);
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.smg-photo:hover, .smg-photo--active { filter: grayscale(0) contrast(1); }
+
+/* Fade-in-on-scroll utility */
+.smg-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--dur-slow) var(--ease-premium),
+              transform var(--dur-slow) var(--ease-premium);
+}
+.smg-reveal.is-visible { opacity: 1; transform: none; }
+
+/* Selection */
+::selection { background: var(--accent); color: var(--smg-black); }
+
+/* Scrollbar (webkit) */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--smg-black); }
+::-webkit-scrollbar-thumb { background: var(--smg-ink-600); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-pressed); }
